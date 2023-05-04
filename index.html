@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Habbit App</title>
+      <link rel="stylesheet" href="/src/styles/style.css" />
+   </head>
+   <body>
+      <div class="app">
+         <div class="sidebar">
+            <div class="logo">
+              <img src="/src//images/habbit.svg" alt="Habbit" class="logo__img"/>
+              <h2 class="logo__title">Habbit</h1>
+            </div>
+            <nav class="menu">
+                <!-- <button class="menu__item">
+                  <img src="/src/images/water.svg" alt="Water">
+                </button>
+                <button class="menu__item">
+                  <img src="/src/images/sport.svg" alt="Sport">
+                </button>
+                <button class="menu__item">
+                  <img src="/src/images/food.svg" alt="Food">
+                </button> -->
+            </nav>
+            <div class="button__container">
+              <button class="button__add">
+                <img src="/src/images/Add.svg" alt="Add">
+              </button>
+            </div>
+         </div>
+         <section class="section">
+          <header>
+            <h1>Отжимания</h1>
+            <div class="progress">
+              <div class="progress__text">
+                <p class="progress__title">Прогресс</p>
+                <p class="progress__percentage">80%</p>
+              </div>
+              <div class="progress__bar">
+                <div class="progress__cover-bar"></div>
+              </div>
+            </div>
+          </header>
+          <main>
+            <div class="days__list">
+              <div class="day">
+                <div class="day__title ">День 1</div>
+                <div class="day__description">Первый подход всегда даётся тяжело</div>
+                <div class="day__delete">
+                  <img src="/src/images/delete.svg" alt="delete">
+                </div>
+              </div>
+              <div class="day">
+                <div class="day__title ">День 2</div>
+                <label for="comment" class="input__wrapper">
+                  <img src="/src/images/comment.svg" alt="comment" class="input__label">
+                  <input class="input" type="text" id="comment" placeholder="Комментарий">
+                </label>
+                <button class="comment__add">Готово</button>
+              </div>
+            </div>
+          </main>
+         </section>
+      </div>
+      <script type="module" src="/src/scripts/main.js"></script>
+   </body>
 </html>
