@@ -43,6 +43,7 @@ body {
 }
 
 .logo {
+   cursor: pointer;
    margin-bottom: 50px;
    display: flex;
    flex-direction: column;
@@ -120,6 +121,10 @@ header {
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
+
+   min-width: 820px;
+   width: 80%;
+   margin: 0 auto;
 }
 
 h1 {
@@ -139,10 +144,12 @@ h1 {
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+   user-select: none;
 }
 .progress__title {
    font-size: 14px;
    color: #232360;
+   user-select: none;
 }
 .progress__percentage {
    font-size: 12px;
@@ -159,10 +166,10 @@ h1 {
 .progress__cover-bar {
    position: absolute;
    left: 0;
-   width: 180px;
    height: 5px;
    background: #5051f9;
    border-radius: 4px;
+   transition: all 0.5s ease-in;
 }
 
 .days__list {
@@ -184,6 +191,35 @@ h1 {
    overflow: hidden;
 }
 
+.new__day {
+   display: flex;
+   flex-direction: row;
+   position: relative;
+   min-width: 820px;
+   margin: 0 auto;
+   width: 80%;
+   min-height: 60px;
+   background: #ffffff;
+   border-radius: 10px;
+   overflow: hidden;
+   margin-top: 12px;
+}
+.new__day_title {
+   width: 150px;
+   background: #fbfaff;
+   border-right: 1px solid #e7ebfb;
+   font-weight: 500;
+   font-size: 14px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   user-select: none;
+}
+.new__day_form {
+   display: flex;
+   flex: 1;
+}
+
 .day__title {
    width: 150px;
    background: #fbfaff;
@@ -193,6 +229,7 @@ h1 {
    display: flex;
    justify-content: center;
    align-items: center;
+   user-select: none;
 }
 
 .day__description {
@@ -220,13 +257,22 @@ h1 {
    padding-right: 10px;
 }
 
+.input_wrapper_error {
+   border: 2px solid red;
+}
+
 .input {
    width: 100%;
    height: 100%;
    border: none;
-   font-size: 14px;
+   font-size: 16px;
    color: #8899a8;
    line-height: 16px;
+   font-family: 'Comfortaa';
+   background-color: white;
+}
+.input:active {
+   background-color: white;
 }
 
 .input__label {
@@ -283,4 +329,138 @@ h1 {
 .comment__add:hover {
    background: #6a6afb;
    color: #e6e9ed;
+}
+
+.cover {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.25);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.2s ease-in-out;
+}
+.cover_hidden {
+   opacity: 0;
+   pointer-events: none;
+}
+
+.popup {
+   position: relative;
+   min-width: 400px;
+   background: #ffffff;
+   box-shadow: 0px 8px 14px 12px rgba(56, 56, 56, 0.05);
+   border-radius: 10px;
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+.popup__title {
+   font-family: 'Comfortaa';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 24px;
+   text-align: center;
+   margin-bottom: 19px;
+   color: #000000;
+}
+
+.icon-label {
+   font-family: 'Comfortaa';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 14px;
+   margin-bottom: 9px;
+   color: #768396;
+}
+.icon-select {
+   display: flex;
+   flex-direction: row;
+   gap: 25px;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 18px;
+}
+
+.icon {
+   width: 45px;
+   height: 45px;
+   background: #ffffff;
+   box-shadow: var(--item-box-shadow);
+   border-radius: 14px;
+   border: none;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+   border: 1px solid #5051f9;
+}
+
+.icon:hover {
+   background: #6a6afb;
+}
+
+.icon:hover img {
+   filter: brightness(0) invert(1);
+}
+.icon_active {
+   background-color: var(--blue-color);
+}
+
+.icon_active img {
+   filter: brightness(0) invert(1);
+}
+.popup__form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+}
+.popup__input {
+   width: 100%;
+   font-size: 16px;
+   color: #8899a8;
+   font-family: 'Comfortaa';
+   background: #ffffff;
+   border: 1px solid #e7ebfb;
+   border-radius: 9px;
+   padding: 10px 20px;
+   margin-bottom: 6px;
+}
+
+.popup__button_form {
+   margin-top: 11px;
+   font-family: 'Comfortaa';
+   width: 120px;
+   margin-right: 5px;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   height: 40px;
+   align-self: center;
+   background: #edecfe;
+   border-radius: 9px;
+   border: none;
+   font-weight: 500;
+   font-size: 13px;
+   color: #5051f9;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+   margin-bottom: 10px;
+}
+.popup__button_form:hover {
+   background: #6a6afb;
+   color: #e6e9ed;
+}
+
+.popup__button {
+   height: 14px;
+   width: 14px;
+   position: absolute;
+   right: 20px;
+   top: 20px;
+   background: transparent;
+   border: none;
+   cursor: pointer;
 }

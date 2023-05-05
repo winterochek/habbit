@@ -14,7 +14,7 @@
               <h2 class="logo__title">Habbit</h1>
             </div>
             <nav class="menu">
-                <!-- <button class="menu__item">
+                <!-- <button class="menu__item" menu-habbit-id="1">
                   <img src="/src/images/water.svg" alt="Water">
                 </button>
                 <button class="menu__item">
@@ -25,18 +25,18 @@
                 </button> -->
             </nav>
             <div class="button__container">
-              <button class="button__add">
+              <button class="button__add" onclick="togglePopup()">
                 <img src="/src/images/Add.svg" alt="Add">
               </button>
             </div>
          </div>
          <section class="section">
           <header>
-            <h1>Отжимания</h1>
+            <h1 id="h1">-</h1>
             <div class="progress">
               <div class="progress__text">
                 <p class="progress__title">Прогресс</p>
-                <p class="progress__percentage">80%</p>
+                <p class="progress__percentage">-</p>
               </div>
               <div class="progress__bar">
                 <div class="progress__cover-bar"></div>
@@ -44,25 +44,53 @@
             </div>
           </header>
           <main>
-            <div class="days__list">
-              <div class="day">
-                <div class="day__title ">День 1</div>
+            <div id="days" class="days__list">
+              <!-- <div class="day">
+                <div class="day__title ">День _</div>
                 <div class="day__description">Первый подход всегда даётся тяжело</div>
                 <div class="day__delete">
                   <img src="/src/images/delete.svg" alt="delete">
                 </div>
-              </div>
-              <div class="day">
-                <div class="day__title ">День 2</div>
-                <label for="comment" class="input__wrapper">
-                  <img src="/src/images/comment.svg" alt="comment" class="input__label">
-                  <input class="input" type="text" id="comment" placeholder="Комментарий">
-                </label>
-                <button class="comment__add">Готово</button>
-              </div>
+              </div> -->
+            </div>
+            <div class="new__day">
+              <div class="new__day_title ">День 2</div>
+              <form class="new__day_form" id="form">
+              <label for="comment" class="input__wrapper" id="input__wrapper">
+                <img src="/src/images/comment.svg" alt="comment" class="input__label">
+                <input name="comment" class="input" type="text" id="comment" placeholder="Комментарий">
+              </label>
+              <button class="comment__add" type="submit">Готово</button>
+            </form>
             </div>
           </main>
          </section>
+         <div class="cover cover_hidden">
+          <div class="popup">
+            <h2 class="popup__title">Новая привычка</h2>
+            <p class="icon-label">Иконка</p>
+            <div class="icon-select">
+              <button class="icon icon_active" onclick="setIcon(this,'sport')">
+                <img src="/src/images/sport.svg" alt="Sport">
+              </button>
+              <button class="icon" onclick="setIcon(this,'water')">
+                <img src="/src/images/water.svg" alt="Water">
+              </button>
+              <button class="icon" onclick="setIcon(this,'food')">
+                <img src="/src/images/food.svg" alt="Food">
+              </button>
+            </div>
+            <form class="popup__form" onsubmit="addHabbit(event)" >
+              <input type="text" name="icon" hidden value="sport" id="inputField">
+              <input class="popup__input" type="text" name="name" placeholder="Название">
+              <input class="popup__input" type="text" name="target" placeholder="Цель">
+              <button type="submit" class="popup__button_form">Добавить</button>
+            </form>
+            <button class="popup__button" onclick="togglePopup()">
+              <img src="/src//images//cross.svg" alt="Close">
+            </button>
+          </div>
+         </div>
       </div>
       <script type="module" src="/src/scripts/main.js"></script>
    </body>
